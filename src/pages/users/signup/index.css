@@ -1,0 +1,36 @@
+.normal {
+  font-family: Georgia, sans-serif;
+  /* margin-top: 3em; */
+  text-align: center;
+  background: url(../../../assets/signup-top.png) no-repeat center 0;
+  background-size: contain;
+  padding-top: 243px;
+}
+
+.signupPaper {
+  /* padding-top: 2em; */
+  padding-bottom: 3em;
+  margin: 0 26px;
+}
+
+.textField {
+  width: 90%;
+}
+
+.signupButton {
+  width: 220px;
+  height: 40px;
+  top: -20px;
+  /* background: linear-gradient(45deg, #C12C7E 30%, #832F8A 90%);
+  color: white; */
+  /* position: absolute;
+  bottom: -15px; */
+}
+
+.fbSignupButton {
+  width: 220px;
+  height: 40px;
+  top: 20px;
+  background: #3B598D;
+  /* color: white; */
+}
