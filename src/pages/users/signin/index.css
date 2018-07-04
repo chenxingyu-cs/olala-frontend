@@ -1,5 +1,6 @@
 .normal {
   font-family: Georgia, sans-serif;
+  /* margin-top: 3em; */
   text-align: center;
   background: url(../../../assets/signup-top.png) no-repeat center 0;
   background-size: contain;
