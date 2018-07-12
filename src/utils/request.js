@@ -9,6 +9,9 @@ function checkStatus(response) {
     return response;
   }
 
+  // console.log('response.status', response.status)
+  // console.log('response', response)
+
   const error = new Error(response.statusText);
   error.response = response;
   throw error;
@@ -22,6 +25,8 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
+  console.log('url', url);
+  // const optionsWithCookie = { ...options, credentials: 'include', mode: 'no-cors' };
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON)
