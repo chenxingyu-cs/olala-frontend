@@ -10,7 +10,9 @@
     "@material-ui/core": "^1.2.1",
     "@material-ui/icons": "^1.1.0",
     "dva": "^2.3.0",
+    "material-ui-rating": "^2.0.0",
     "material-ui-search-bar": "^1.0.0-beta.7",
+    "react-star-rating-component": "^1.4.1",
     "umi": "^1.0.0",
     "umi-plugin-dva": "^0.7.1"
   },

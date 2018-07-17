@@ -27,9 +27,20 @@ const theme = createMuiTheme({
       },
       MuiPaper: {
         rounded: {
-          borderRadius: 8,
+          borderRadius: 0,
         }
-      }
+      },
+      MuiCardContent: {
+        root: {
+          paddingTop: 0,
+          paddingLeft: '12px',
+          paddingRight: 0,
+          paddingBottom: 0,
+          fontSize: '12px',
+          '&:last-child': {paddingBottom: 0}
+   
+        },
+      },
     },
   });
 
