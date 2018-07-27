@@ -6,10 +6,14 @@ import StarRatingComponent from 'react-star-rating-component';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Link from 'umi/link';
+import router from 'umi/router';
 
 const style = {
   card: {
     display: 'flex',
+    padding: '8px',
+    margin: '8px 8px 0 8px',
   },
   details: {
     display: 'flex',
@@ -27,11 +31,17 @@ const style = {
     width: 38,
   },
   image: {
-    width: '100px',
-    height: '100px',
+    width: '80px',
+    height: '80px',
   },
-  contentNew: {
-    padding: '0 0 0 12px',
+  rateContent: {
+    display: 'flex',
+  },
+  rateNum: {
+    padding: '0 0 0 4px',
+  },
+  searchBar: {
+    margin: '4px 4px 0 4px',
   }
 };
 
@@ -65,36 +75,46 @@ class BeautyProfessionalsIndexPage extends React.Component {
 
     console.log('firstBP', firstBP)
     const a = this.props.list.map(bp =>
-      <Card style={style.card} key={bp._id}>
+      // <Link to={`/beautyProfessionals/${bp._id}`}>
+      <Card style={style.card} key={bp._id} onClick={() => router.push(`/beautyProfessionals/${bp._id}`)}>
         <CardMedia
           style={style.image}
           image={bp.photos[0]}
         />
-        <CardContent style={style.content} classes={{
-        root: style.contentNew,
-      }}>
+        <CardContent style={style.content}>
           <div>{bp.name}</div>
-          <div>
+          <div style={style.rateContent}>
             <StarRatingComponent
               name="overallRate"
               editing={false}
               value={bp.reviewsOverall.rate}
             />
-            <span>{bp.reviewsOverall.number} reviews</span>
+            <span style={style.rateNum}>{bp.reviewsOverall.number} reviews</span>
           </div>
           <Services services={bp.services} />
+          <Row>
+            <Col span={12}>
           <div>
-            {bp.address}
+            {bp.address.streetAddress}
           </div>
+          </Col>
+            <Col span={2} offset={10}>
+            <div>
+            ${bp.pricing[0].price}
+          </div>
+            </Col>
+          </Row>
         </CardContent>
 
       </Card>
+      // </Link>
     )
     return (
       <div>
         <Row gutter={24}>
           <Col lg={24} md={24}>
             <SearchBar
+              style={style.searchBar}
               onChange={() => console.log('onChange')}
               onRequestSearch={() => console.log('onRequestSearch')}
             />

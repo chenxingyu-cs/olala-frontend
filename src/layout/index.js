@@ -13,21 +13,21 @@ const theme = createMuiTheme({
     overrides: {
       // Name of the component ⚛️ / style shee
       
-      MuiButton: {
-        // Name of the rule
-        root: {
-          // Some CSS
-          background: 'linear-gradient(45deg, #C12C7E 30%, #832F8A 90%)',
-          borderRadius: 20,
-          border: 0,
-          color: 'white',
-          padding: '0 30px',
-          boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .30)',
-        },
-      },
+      // MuiButton: {
+      //   // Name of the rule
+      //   root: {
+      //     // Some CSS
+      //     background: 'linear-gradient(45deg, #C12C7E 30%, #832F8A 90%)',
+      //     borderRadius: 20,
+      //     border: 0,
+      //     color: 'white',
+      //     padding: '0 30px',
+      //     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .30)',
+      //   },
+      // },
       MuiPaper: {
         rounded: {
-          borderRadius: 0,
+          borderRadius: 4,
         }
       },
       MuiCardContent: {
