@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import StarIcon from '@material-ui/icons/Star';
@@ -10,8 +9,10 @@ import { Row, Col } from 'antd';
 
 
 const styles = theme => ({
+  normal: {
+    marginTop: 20,
+  },
   button: {
-    // margin: theme.spacing.unit,
     paddingLeft: 8,
     paddingRight: 8,
     width: '100%',
@@ -31,22 +32,22 @@ const styles = theme => ({
 function IconLabelButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <div className={classes.normal}>
       <Row gutter={8}>
         <Col span={8} >
-          <Button variant="contained" color="default" className={classes.button}>
+          <Button disableRipple variant="contained" color="default" className={classes.button}>
             <StarIcon className={classes.leftIcon} />
             Review
           </Button>
         </Col>
         <Col span={8} >
-          <Button variant="contained" color="default" className={classes.button}>
+          <Button disableRipple variant="contained" color="default" className={classes.button}>
             <CallIcon className={classes.leftIcon} />
             Call
           </Button>
         </Col>
         <Col span={8} >
-          <Button variant="contained" color="default" className={classes.button}>
+          <Button disableRipple variant="contained" color="default" className={classes.button}>
             <BookIcon className={classes.leftIcon} />
             Reserve
           </Button>

@@ -12,8 +12,11 @@ export default {
         name: '', 
         address: {}, 
         pricing: [], 
-        reviewsOverall: {}, 
-        reviews: [{reviewerName: '', _id: 0}],
+        reviewsOverall: {
+          rate: 0,
+          number: 0
+        }, 
+        reviews: [],
         availability: [{}]
       }
     },
@@ -24,6 +27,7 @@ export default {
       },
 
       saveOne(state, { payload: { data: current } }) {
+        if (Object.keys(current).length === 0) return { ...state }
         return { ...state, current };
       },
     },
@@ -45,7 +49,7 @@ export default {
 
       // Fetch the beautyProfessional
       *fetchCurrent({ payload: { bpId = 1 } }, { call, put }) {
-        const { data, err } = yield call(beautyProfessionalService.fetchOne, bpId);
+        const { data } = yield call(beautyProfessionalService.fetchOne, bpId);
         yield put({
           type: 'saveOne',
           payload: {

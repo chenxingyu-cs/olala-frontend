@@ -6,7 +6,6 @@ import StarRatingComponent from 'react-star-rating-component';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Link from 'umi/link';
 import router from 'umi/router';
 
 const style = {
@@ -71,6 +70,10 @@ class BeautyProfessionalsIndexPage extends React.Component {
   }
 
   render() {
+
+    if (this.props.list == null) {
+      return null;
+    }
     const firstBP = this.props.list[0];
 
     console.log('firstBP', firstBP)
