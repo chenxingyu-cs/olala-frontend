@@ -7,7 +7,7 @@ import indigo from '@material-ui/core/colors/indigo';
 const theme = createMuiTheme({
 
     palette: {
-      primary: purple,
+      primary: { main: purple[400] },
       secondary: indigo,
     },
     overrides: {

@@ -6,6 +6,11 @@ import ImageGridList from '../../components/ImageGridList';
 import BeautyProfessionalReviews from '../../components/BeautyProfessionalReviews';
 import RateWithNum from '../../components/RateWithNum';
 import Grid from '@material-ui/core/Grid';
+import GoogleMapReact from 'google-map-react';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
 
 
 const style = {
@@ -15,8 +20,16 @@ const style = {
     margin: '8px 8px 0 8px',
   },
   normal: {
-    padding: '8px',
+    // padding: '8px',
+    backgroundColor: '#F5F5F5',
   },
+  metadata: {
+    backgroundColor: '#FFFFFF',
+  },
+  titleCard: {
+    backgroundColor: '#FFFFFF',
+    padding: '8px',
+  }
 };
 
 class BeautyProfessionalDetailPage extends React.Component {
@@ -59,8 +72,28 @@ class BeautyProfessionalDetailPage extends React.Component {
       openAndCloseTime = ` • ${tmpToday[0].startTimeOfDay} - ${tmpToday[0].endTimeOfDay}`;
     }
 
+    const mapProps = {
+      center: {
+        lat: bpData.address.lat,
+        lng: bpData.address.lng,
+      },
+      zoom: 14,
+    };
+
+    const AnyReactComponent = ({ text }) => <div><LocationOnIcon /></div>;
+
+    const phoneNumDivider = bpData.phoneNumber && (<Divider />);
+    const phoneNumDiv = bpData.phoneNumber && (
+      <ListItem>
+          <Typography variant="body1">
+        {bpData.phoneNumber}
+            </Typography>
+        </ListItem>
+    )
+
     return (
       <div style={style.normal}>
+      <div style={style.titleCard}>
         <Typography variant="title">
           {bpData.name}
         </Typography>
@@ -88,8 +121,49 @@ class BeautyProfessionalDetailPage extends React.Component {
             </Typography>
           </Grid>
         </Grid>
-
+        
         <ButtonDiv />
+        </div>
+
+
+        <div style={{ height: '20vh', width: '100%', marginTop: '20px' }}>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: 'AIzaSyCdvR7wOaHN_MP7KExd-JZDiwKjDNOKD5c' }}
+            center={mapProps.center}
+            defaultZoom={mapProps.zoom}
+          >
+            <AnyReactComponent
+              lat={bpData.address.lat}
+              lng={bpData.address.lng}
+            />
+          </GoogleMapReact>
+        </div>
+
+        <div className={style.root}>
+      <List style={style.metadata}>
+        <ListItem>
+        <Grid
+          container
+          alignItems="flex-start"
+          direction="column"
+          justify="flex-start">
+          <Grid item>
+            
+        <Typography variant="body1">
+        {bpData.address.streetAddress}
+            </Typography>
+          </Grid>
+          <Grid item>
+          <Typography variant="caption">
+            {`${bpData.address.streetAddress}, ${bpData.address.state} ${bpData.address.zipCode}`}
+            </Typography>
+          </Grid>
+        </Grid>
+        </ListItem>
+        {phoneNumDivider}
+        {phoneNumDiv}
+      </List>
+    </div>
 
         <ImageGridList tileData={tileData} />
 

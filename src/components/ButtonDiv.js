@@ -35,19 +35,19 @@ function IconLabelButtons(props) {
     <div className={classes.normal}>
       <Row gutter={8}>
         <Col span={8} >
-          <Button disableRipple variant="contained" color="default" className={classes.button}>
+          <Button disableRipple variant="contained" color="primary" className={classes.button}>
             <StarIcon className={classes.leftIcon} />
             Review
           </Button>
         </Col>
         <Col span={8} >
-          <Button disableRipple variant="contained" color="default" className={classes.button}>
+          <Button disableRipple variant="contained" color="primary" className={classes.button}>
             <CallIcon className={classes.leftIcon} />
             Call
           </Button>
         </Col>
         <Col span={8} >
-          <Button disableRipple variant="contained" color="default" className={classes.button}>
+          <Button disableRipple variant="contained" color="primary" className={classes.button}>
             <BookIcon className={classes.leftIcon} />
             Reserve
           </Button>

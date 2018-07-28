@@ -8,6 +8,11 @@ import { Row, Col } from 'antd';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import StarRatingComponent from 'react-star-rating-component';
 import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
+
 
 
 const styles = theme => ({

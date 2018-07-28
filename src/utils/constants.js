@@ -8,8 +8,11 @@ const HOME_HEAD_IMG = 'https://res.cloudinary.com/xnchen/image/upload/v153072645
 
 const BEAUTY_PROFESSIONAL_URL = `${PROD_HOST_URL}/beautyProfessionals`;
 
+const GOOGLE_MAP_API_KEY = 'AIzaSyCdvR7wOaHN_MP7KExd-JZDiwKjDNOKD5c';
+
 module.exports = {
   BEAUTY_PROFESSIONAL_URL,
   HOST_URL,
   HOME_HEAD_IMG,
 }
+
