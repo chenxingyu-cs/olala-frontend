@@ -126,7 +126,7 @@ class BeautyProfessionalDetailPage extends React.Component {
         </div>
 
 
-        <div style={{ height: '20vh', width: '100%', marginTop: '20px' }}>
+        <div style={{ height: '28vh', width: '100%', marginTop: '24px' }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyCdvR7wOaHN_MP7KExd-JZDiwKjDNOKD5c' }}
             center={mapProps.center}

@@ -6,6 +6,8 @@ import StarIcon from '@material-ui/icons/Star';
 import CallIcon from '@material-ui/icons/Call';
 import BookIcon from '@material-ui/icons/Book';
 import { Row, Col } from 'antd';
+import Grid from '@material-ui/core/Grid';
+
 
 
 const styles = theme => ({
@@ -36,20 +38,45 @@ function IconLabelButtons(props) {
       <Row gutter={8}>
         <Col span={8} >
           <Button disableRipple variant="contained" color="primary" className={classes.button}>
-            <StarIcon className={classes.leftIcon} />
-            Review
+            <Grid
+              container
+              alignItems="center"
+              direction="column"
+              justify="center">
+              <Grid item>
+                <StarIcon className={classes.leftIcon} />
+              </Grid>
+              Review
+            </Grid>
+          </Button>
+
+        </Col>
+        <Col span={8} >
+          <Button disableRipple variant="contained" color="primary" className={classes.button}>  
+            <Grid
+              container
+              alignItems="center"
+              direction="column"
+              justify="center">
+              <Grid item>
+                <CallIcon className={classes.leftIcon} />
+              </Grid>
+              Call
+            </Grid>
           </Button>
         </Col>
         <Col span={8} >
           <Button disableRipple variant="contained" color="primary" className={classes.button}>
-            <CallIcon className={classes.leftIcon} />
-            Call
-          </Button>
-        </Col>
-        <Col span={8} >
-          <Button disableRipple variant="contained" color="primary" className={classes.button}>
-            <BookIcon className={classes.leftIcon} />
-            Reserve
+            <Grid
+              container
+              alignItems="center"
+              direction="column"
+              justify="center">
+              <Grid item>
+                <BookIcon className={classes.leftIcon} />
+              </Grid>
+              Reserve
+            </Grid>
           </Button>
         </Col>
       </Row>
