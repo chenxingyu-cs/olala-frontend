@@ -3,6 +3,7 @@ import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 import indigo from '@material-ui/core/colors/indigo';
+import BottomNavigation from '../components/BottomNavigation';
 
 const theme = createMuiTheme({
 
@@ -48,6 +49,7 @@ function Layout({ children }) {
   return (
     <MuiThemeProvider theme={theme}>
         {children}
+        <BottomNavigation />
     </MuiThemeProvider>
   );
 }

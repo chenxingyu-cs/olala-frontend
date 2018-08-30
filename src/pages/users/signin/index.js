@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-
+import SigninContainer from '../../../components/users/SigninContainer'
 
 const style = {
   signup: {
@@ -29,17 +29,17 @@ class SigninPage extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'signup/create',
-      payload: {
-        page: 1,
-      },
-    });
-  }
+  // componentDidMount() {
+  //   this.props.dispatch({
+  //     type: 'signup/create',
+  //     payload: {
+  //       page: 1,
+  //     },
+  //   });
+  // }
 
   handleSubmit = () => {
-    console.log(this.state)
+    console.log("ffffffffff")
     this.props.dispatch({
       type: 'signin/authenticate',
       payload: this.state,
@@ -54,35 +54,8 @@ class SigninPage extends React.Component {
   render() {
     return (
       <div className={styles.normal}>
-        <Paper className={styles.signupPaper} elevation={2}>
-          <Grid container spacing={0}>
-            <Grid item xs={12}>
-              <TextField
-                id="email"
-                label="Email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                className={styles.textField}
-                margin="normal"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="password"
-                label="Password"
-                value={this.state.password}
-                onChange={this.handleChange}
-                className={styles.textField}
-                type="password"
-                margin="normal"
-              />
-            </Grid>
-          </Grid>
-  
-        </Paper>
-        <div>
-          <Button style={style.signup} onClick={this.handleSubmit}>Sign In</Button>
-        </div>
+        <SigninContainer dispatch={this.props.dispatch}/>
+
       </div>
     );
   }

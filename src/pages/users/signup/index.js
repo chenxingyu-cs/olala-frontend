@@ -30,14 +30,14 @@ class IndexPage extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'signup/create',
-      payload: {
-        page: 1,
-      },
-    });
-  }
+  // componentDidMount() {
+  //   this.props.dispatch({
+  //     type: 'signup/create',
+  //     payload: {
+  //       page: 1,
+  //     },
+  //   });
+  // }
 
   handleSubmit = () => {
     console.log(this.state)
