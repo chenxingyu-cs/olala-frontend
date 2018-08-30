@@ -11,12 +11,16 @@ import Link from 'umi/link';
 const styles = {
   root: {
     textAlign: 'center',
-    paddingTop: 120,
+    paddingTop: 100,
   },
 
-  signinPaper: {
+  signupPaper: {
     paddingBottom: 3,
     margin: '0 26px',
+  },
+
+  iconTop: {
+    marginBottom: 8,
   },
   
   textField: {
@@ -26,7 +30,7 @@ const styles = {
     fontSize: 5
   },
 
-  signinButton: {
+  signupButton: {
     width:  '80%',
     background: 'linear-gradient(45deg, #CE367A 30%, #A55DA5 90%)',
     marginTop: 30,
@@ -35,12 +39,12 @@ const styles = {
     fontSize: 18
   },
 
-  signupLink: {
+  signinLink: {
     marginBottom: 8,
   }
 };
 
-class SigninContainer extends React.Component {
+class SignupContainer extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -65,14 +69,25 @@ class SigninContainer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Paper className={classes.signinPaper} elevation={2}>
+        <Paper className={classes.signupPaper} elevation={2}>
         <Grid container spacing={0}>
              <Grid item xs={12}>
               <img
                 src='https://res.cloudinary.com/xnchen/image/upload/v1535609591/olala/icon-top.png'
                 width='100%'
                 alt=''
+                className={classes.iconTop}
               ></img>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id='userName'
+                label='&nbsp;User Name'
+                value={this.state.userName}
+                onChange={this.handleChange}
+                className={classes.textField}
+                margin='normal'
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -100,13 +115,13 @@ class SigninContainer extends React.Component {
                 color='primary'
                 variant='contained'
                 onClick={this.handleSubmit}
-                className={classes.signinButton}
+                className={classes.signupButton}
               >
-                Sign In
+                Sign up
               </Button>
             </Grid>
-            <Grid item xs={12} className={classes.signupLink}>
-              New to Olala? <Link to="/users/signup">Sign up</Link>
+            <Grid item xs={12} className={classes.signinLink}>
+              Already have Olala account? <Link to="/users/signin">Sign in</Link>
             </Grid>
           </Grid>
         </Paper>
@@ -116,8 +131,8 @@ class SigninContainer extends React.Component {
   
 }
 
-SigninContainer.propTypes = {
+SignupContainer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SigninContainer);
+export default withStyles(styles)(SignupContainer);

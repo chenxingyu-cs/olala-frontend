@@ -1,26 +1,9 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './index.css';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
+import SignupContainer from '../../../components/users/SignupContainer';
 
 
-const style = {
-  signup: {
-    width: '220px',
-    height: '40px',
-    top: '-20px',
-  },
-  facebook: {
-    background: '#3B598D',
-    width: '220px',
-    height: '40px',
-  },
-};
-
-class IndexPage extends React.Component {
+class SignupPage extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -29,15 +12,6 @@ class IndexPage extends React.Component {
       password: '',
     }
   }
-
-  // componentDidMount() {
-  //   this.props.dispatch({
-  //     type: 'signup/create',
-  //     payload: {
-  //       page: 1,
-  //     },
-  //   });
-  // }
 
   handleSubmit = () => {
     console.log(this.state)
@@ -54,56 +28,15 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <div className={styles.normal}>
-        <Paper className={styles.signupPaper} elevation={2}>
-          <Grid container spacing={0}>
-            <Grid item xs={12}>
-              <TextField
-                id="fullName"
-                label="Full Name"
-                value={this.state.fullName}
-                onChange={this.handleChange}
-                className={styles.textField}
-                margin="normal"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="email"
-                label="Email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                className={styles.textField}
-                margin="normal"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="password"
-                label="Password"
-                value={this.state.password}
-                onChange={this.handleChange}
-                className={styles.textField}
-                type="password"
-                margin="normal"
-              />
-            </Grid>
-          </Grid>
-  
-        </Paper>
-        <div>
-          <Button style={style.signup} onClick={this.handleSubmit}>Sign Up</Button>
-        </div>
-        <div>
-          <Button style={style.facebook}>Sign Up With Facebook</Button>
-        </div>
+      <div>
+        <SignupContainer dispatch={this.props.dispatch} />
       </div>
     );
   }
   
 }
 
-IndexPage.propTypes = {
+SignupPage.propTypes = {
 };
 
-export default connect()(IndexPage);
+export default connect()(SignupPage);
