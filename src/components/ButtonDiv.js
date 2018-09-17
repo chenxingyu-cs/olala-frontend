@@ -7,6 +7,7 @@ import CallIcon from '@material-ui/icons/Call';
 import BookIcon from '@material-ui/icons/Book';
 import { Row, Col } from 'antd';
 import Grid from '@material-ui/core/Grid';
+import router from 'umi/router';
 
 
 
@@ -37,7 +38,7 @@ function IconLabelButtons(props) {
     <div className={classes.normal}>
       <Row gutter={8}>
         <Col span={8} >
-          <Button disableRipple variant="contained" color="primary" className={classes.button}>
+          <Button disableRipple variant="contained" color="primary" className={classes.button} onClick={() => router.push(`/beautyProfessionals/review`)}>
             <Grid
               container
               alignItems="center"
