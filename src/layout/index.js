@@ -48,11 +48,13 @@ const theme = createMuiTheme({
     },
   });
 
-function Layout({ children }) {
+function Layout(props) {
+  console.log('layout', props)
+  const { children, location } = props;
   return (
     <MuiThemeProvider theme={theme}>
         {children}
-        <BottomNavigation />
+        <BottomNavigation location={location} />
     </MuiThemeProvider>
   );
 }

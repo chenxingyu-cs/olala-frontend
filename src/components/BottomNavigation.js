@@ -24,9 +24,17 @@ const routeList = [
 ]
 
 class SimpleBottomNavigation extends React.Component {
-  state = {
-    value: 0,
-  };
+  constructor(props) {
+    super(props);
+
+    const pathList = this.props && this.props.location.pathname.split('/')
+    const firstPath = pathList && pathList[1];
+    const value = firstPath === 'users' ? 2 : 0;
+
+    this.state = {
+      value,
+    }
+  }
 
   handleChange = (event, value) => {
     console.log(value)

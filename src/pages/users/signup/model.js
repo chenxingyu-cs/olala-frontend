@@ -1,4 +1,6 @@
-import { create } from './service'
+import { create } from './service';
+import router from 'umi/router';
+
 
 export default {
     namespace: 'signup',
@@ -9,10 +11,10 @@ export default {
 
     *create({ payload: values }, { call, put, select }) {
         console.log('create in model being called', values)
-        const res = yield call(create, values);
-        console.log('res', res)
-        // const page = yield select(state => state.users.page);
-        // yield put({ type: 'fetch', payload: { page } });
+        const { data } = yield call(create, values);
+        if (data.success) {
+          router.push('/users/signin');
+        }
       },
     },
   
