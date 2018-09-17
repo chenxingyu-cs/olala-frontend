@@ -6,7 +6,8 @@ const PROD_HOST_URL = 'http://ec2-52-40-84-40.us-west-2.compute.amazonaws.com:70
 
 const HOME_HEAD_IMG = 'https://res.cloudinary.com/xnchen/image/upload/v1530726459/olala/sf.jpg';
 
-const BEAUTY_PROFESSIONAL_URL = `${PROD_HOST_URL}/beautyProfessionals`;
+const BEAUTY_PROFESSIONAL_URL = `${HOST_URL}/beautyProfessionals`;
+const USER_URL = `${HOST_URL}/users`;
 
 const GOOGLE_MAP_API_KEY = 'AIzaSyCdvR7wOaHN_MP7KExd-JZDiwKjDNOKD5c';
 
@@ -15,5 +16,6 @@ module.exports = {
   GOOGLE_MAP_API_KEY,
   HOST_URL,
   HOME_HEAD_IMG,
+  USER_URL,
 }
 

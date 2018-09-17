@@ -54,7 +54,7 @@ class SignupContainer extends React.Component {
   }
   handleSubmit = () => {
     this.props.dispatch({
-      type: 'signin/authenticate',
+      type: 'signup/create',
       payload: this.state,
     });
   }

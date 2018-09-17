@@ -1,4 +1,4 @@
-import * as signupService from './service'
+import { create } from './service'
 
 export default {
     namespace: 'signup',
@@ -9,7 +9,8 @@ export default {
 
     *create({ payload: values }, { call, put, select }) {
         console.log('create in model being called', values)
-        yield call(signupService.create, values);
+        const res = yield call(create, values);
+        console.log('res', res)
         // const page = yield select(state => state.users.page);
         // yield put({ type: 'fetch', payload: { page } });
       },
