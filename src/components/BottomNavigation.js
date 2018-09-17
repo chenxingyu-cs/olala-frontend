@@ -20,7 +20,7 @@ const styles = {
 const routeList = [
   '/beautyProfessionals',
   '/beautyProfessionals',
-  '/users/my'
+  '/users/me'
 ]
 
 class SimpleBottomNavigation extends React.Component {

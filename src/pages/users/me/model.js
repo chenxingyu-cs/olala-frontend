@@ -1,7 +1,7 @@
 import * as signinService from './service'
 
 export default {
-    namespace: 'my',
+    namespace: 'me',
   
     state: {},
   

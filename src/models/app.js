@@ -4,7 +4,8 @@ export default {
   namespace: 'app',
 
   state: {
-    userId: ''
+    userId: '',
+    userName: ''
   },
 
   subscriptions: {
@@ -21,13 +22,18 @@ export default {
       console.log('app query', payload)
       yield put({ type: 'save', payload });
     },
+
+    *logout({ payload }, { call, put }) {
+      console.log('app logout', payload)
+      yield put({ type: 'save', payload });
+    },
   },
 
   reducers: {
     save(state, { payload }) {
       console.log('app save', payload)
-      const { userId } = payload;
-      return { ...state, userId };
+      const { userId, userName } = payload;
+      return { ...state, userId, userName };
     },
   },
 

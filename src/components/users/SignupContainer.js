@@ -48,6 +48,7 @@ class SignupContainer extends React.Component {
   constructor() {
     super()
     this.state = {
+      userName: '',
       email: '',
       password: '',
     }
