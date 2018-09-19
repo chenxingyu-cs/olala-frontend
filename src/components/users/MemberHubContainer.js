@@ -38,6 +38,7 @@ class GuestAccountContainer extends React.Component {
       type: 'app/logout',
       payload: {
         userId: '',
+        userName: '',
       },
     });
   };

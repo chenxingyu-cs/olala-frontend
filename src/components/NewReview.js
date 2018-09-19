@@ -53,7 +53,7 @@ class NewReview extends React.Component {
             margin="normal"
             multiline
             fullWidth
-            rows="23"
+            rows="21"
             onChange={this.onChangeReview.bind(this)}
           />
         <div className={classes.postButton}>

@@ -36,6 +36,17 @@ class SimpleBottomNavigation extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const pathList = this.props && this.props.location.pathname.split('/');
+    if (prevProps.location.pathname !== pathList) {
+      const firstPath = pathList && pathList[1];
+      const value = firstPath === 'users' ? 2 : 0;
+      if (value !== this.state.value) {
+        this.setState({ value });
+      }
+    }
+  }
+
   handleChange = (event, value) => {
     console.log(value)
     this.setState({ value });

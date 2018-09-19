@@ -113,6 +113,7 @@ class SignupContainer extends React.Component {
             </Grid>
             <Grid item xs={12}>
               <Button
+                disableRipple
                 color='primary'
                 variant='contained'
                 onClick={this.handleSubmit}

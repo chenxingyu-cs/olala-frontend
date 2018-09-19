@@ -48,7 +48,9 @@ class SigninContainer extends React.Component {
       password: '',
     }
   }
+
   handleSubmit = () => {
+    console.log('login submin')
     this.props.dispatch({
       type: 'signin/authenticate',
       payload: this.state,
@@ -97,6 +99,7 @@ class SigninContainer extends React.Component {
             </Grid>
             <Grid item xs={12}>
               <Button
+                disableRipple
                 color='primary'
                 variant='contained'
                 onClick={this.handleSubmit}
