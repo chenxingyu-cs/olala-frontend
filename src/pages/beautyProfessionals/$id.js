@@ -122,7 +122,7 @@ class BeautyProfessionalDetailPage extends React.Component {
           </Grid>
         </Grid>
         
-        <ButtonDiv />
+        <ButtonDiv userId={this.props.userId} />
         </div>
 
 
@@ -179,8 +179,10 @@ BeautyProfessionalDetailPage.propTypes = {
 
 function mapStateToProps(state) {
   const { current } = state.beautyProfessionals;
+  const { userId } = state.app;
   return {
     current,
+    userId,
   };
 }
 

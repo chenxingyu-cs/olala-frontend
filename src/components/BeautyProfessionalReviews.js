@@ -13,6 +13,7 @@ import Avatar from '@material-ui/core/Avatar';
 const styles = theme => ({
   card: {
     marginTop: 20,
+    paddingBottom: 60,
   },
   reviewCard: {
     margin: '8px 0 0 0',

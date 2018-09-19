@@ -13,8 +13,9 @@ class AddReviewPage extends React.Component {
   componentDidMount() {}
 
   render() {
+    const bpId = this.props.current._id;
     return (
-        <NewReview />
+        <NewReview bpId={bpId} userId={this.props.userId} userName={this.props.userName} dispatch={this.props.dispatch} />
     )
   }
 
@@ -25,8 +26,11 @@ AddReviewPage.propTypes = {
 
 function mapStateToProps(state) {
   const { current } = state.beautyProfessionals;
+  const { userId, userName } = state.app;
   return {
     current,
+    userId,
+    userName
   };
 }
 

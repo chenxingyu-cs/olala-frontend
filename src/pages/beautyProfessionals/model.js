@@ -1,4 +1,5 @@
-import * as beautyProfessionalService from './service'
+import * as beautyProfessionalService from './service';
+import router from 'umi/router';
 
 export default {
     namespace: 'beautyProfessionals',
@@ -6,7 +7,7 @@ export default {
     state: {
       list: [],
       current: {
-        _id: 123,
+        _id: "123",
         services: [], 
         photos: [], 
         name: '', 
@@ -58,6 +59,14 @@ export default {
         });
       },
 
+      *createReview({ payload: values }, { call, put, select }) {
+        console.log('crecreateReviewate in model being called', values)
+        const { data } = yield call(beautyProfessionalService.createReview, values);
+        console.log('data', data)
+        if (data.success) {
+          router.push(`/beautyProfessionals/${values.revieweeId}`);
+        }
+      },
     },
   
   }

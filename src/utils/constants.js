@@ -8,6 +8,9 @@ const HOME_HEAD_IMG = 'https://res.cloudinary.com/xnchen/image/upload/v153072645
 
 const BEAUTY_PROFESSIONAL_URL = `${HOST_URL}/beautyProfessionals`;
 const USER_URL = `${HOST_URL}/users`;
+const REVIEW_URL = `${HOST_URL}/customerReviews`;
+
+// http://localhost:7001/api/v1/customerReviews
 
 const GOOGLE_MAP_API_KEY = 'AIzaSyCdvR7wOaHN_MP7KExd-JZDiwKjDNOKD5c';
 
@@ -17,5 +20,6 @@ module.exports = {
   HOST_URL,
   HOME_HEAD_IMG,
   USER_URL,
+  REVIEW_URL,
 }
 

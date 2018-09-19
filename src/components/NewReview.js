@@ -44,6 +44,7 @@ class NewReview extends React.Component {
           <StarRatingComponent
               name="newRate"
               editing={true}
+              value={this.state.rating}
               onStarClick={this.onStarChange.bind(this)}
           />
         </div>
@@ -77,6 +78,18 @@ class NewReview extends React.Component {
     console.log('post review');
     console.log('rating: ', this.state.rating);
     console.log('review: ', this.state.review);
+    // reviewerName, content, score, revieweeId, reviewType
+
+    this.props.dispatch({
+      type: 'beautyProfessionals/createReview',
+      payload: {
+        reviewerName: this.props.userName,
+        content: this.state.review,
+        score: this.state.rating,
+        revieweeId: this.props.bpId,
+        reviewType: 'BEAUTY_PROFESSIONAL',
+      },
+    });
   }
 }
 

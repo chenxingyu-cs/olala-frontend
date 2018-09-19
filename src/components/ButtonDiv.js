@@ -33,12 +33,15 @@ const styles = theme => ({
 });
 
 function IconLabelButtons(props) {
-  const { classes } = props;
+  const { classes, userId } = props;
+
+  const reviewLink = userId ? '/beautyProfessionals/review' : '/users/me';
+
   return (
     <div className={classes.normal}>
       <Row gutter={8}>
         <Col span={8} >
-          <Button disableRipple variant="contained" color="primary" className={classes.button} onClick={() => router.push(`/beautyProfessionals/review`)}>
+          <Button disableRipple variant="contained" color="primary" className={classes.button} onClick={() => router.push(reviewLink)}>
             <Grid
               container
               alignItems="center"
